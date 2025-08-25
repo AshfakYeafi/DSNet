@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Brain Tumor Detection</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/form_upload.css" rel="stylesheet">
+    <link href="../static/css/custom.css" rel="stylesheet">
+  </head>
+
+  <body class="bg-custom">
+     
+    <div class="container mt-0">
+    
+      <div class="row text-white">
+        <div class="col-3">
+          <img src="https://www.kuet.ac.bd/department/EEE/libs/img/logo.png" alt="Logo" width="120">
+        </div>
+        <div class="col-9">
+          <h1 align="left"><a href="/" >Brain Tumor Segmentation</a></h1>
+
+        </div>
+      </div>  
+      
+      
+      <div class="form align-items-center">
+        <form class="form-upload" method=post enctype=multipart/form-data>
+          {% if image_loc == None %}
+
+
+          <h1 class="h3 mb-3 font-weight-normal" style="color:white;background-color:#000000ba;" >Upload T1 image</h1>
+          <input type="file" id="t1" name="t1" class="form-control" required autofocus>
+          <br>
+          <br>
+
+          <h1 class="h3 mb-3 font-weight-normal" style="color:white;background-color:#000000ba;" >Upload T2 image</h1>
+          <input type="file" id="t2w" name="t2w" class="form-control" required autofocus>
+          <br>
+          <br>
+
+
+          <h1 class="h3 mb-3 font-weight-normal" style="color:white;background-color:#000000ba;" >Upload T1CE image</h1>
+          <input type="file" id="t1ce" name="t1ce" class="form-control" required autofocus>
+          <br>
+          <br>
+
+
+          <h1 class="h3 mb-3 font-weight-normal" style="color:white;background-color:#000000ba;" >Upload FLAIR image</h1>
+          <input type="file" id="flair" name="flair" class="form-control" required autofocus>
+          <br>
+          <br>
+
+          <h1 class="h3 mb-3 font-weight-normal" style="color:white;background-color:#000000ba;" >Enter Age</h1>
+          <input type="number" id="age" name="age" class="form-control" required autofocus>
+          <br>
+          <br>
+
+          <br>
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Segment</button>
+          {%endif%}
+          {% if image_loc %}
+            <div class="text-left">
+              <h4 class="h4 mb-0 font-weight-bold" style="color:white;background-color:#000000ba;">Segmentation Complete</h4>
+              <img class="mb-4" src="static/data/{{image_loc}}" alt="" width="620" height="620">
+              <h4 class="h5 mb-0 font-weight-bold" style="color:white;background-color:#000000ba;">{{survival}}</h4>
+              <h4 class="h5 mb-0 font-weight-bold" style="color:white;background-color:#000000ba;">Mask successfully saved at:</h4>
+                
+              <h5 class="h5 mb-0 font-weight-bold" style="color:darkred;background-color:#;">./result/{{prediction}}_et.nii</h5>
+
+              <h5 class="h5 mb-0 font-weight-bold" style="color:darkred;background-color:#;">./result/{{prediction}}_wt.nii</h5>
+
+              <h5 class="h5 mb-0 font-weight-bold" style="color:darkred;background-color:#;">./result/{{prediction}}_tc.nii</h5>
+            </div>
+          {%endif%}
+        </form>
+      </div>
+     
+    </div>
+    
+  </body>
+</html>

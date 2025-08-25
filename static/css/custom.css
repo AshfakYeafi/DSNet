@@ -1,0 +1,46 @@
+.bg-custom {
+  background-image: url("../img/cbg_7.jpg");
+/*   background-color: #cccccc; */
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+
+}
+
+.container {
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.form {
+  margin-top: 50px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  background-color: #ffffffa1;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.bg-white-50 {
+  background-color: #ffffff00;
+  opacity: 0.75;
+}
+
+.img {
+  display: block;
+  margin: 0 auto;
+  border: black;
+}
+
