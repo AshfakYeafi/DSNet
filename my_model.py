@@ -275,7 +275,7 @@ class up_conv(nn.Module):
 # ---------------------------------------------------------------------
 # Full UNet with attention skips and dynamic convolutions
 # ---------------------------------------------------------------------
-class ResAttUnetDync(nn.Module):
+class DSNet(nn.Module):
     """
     UNet-style encoder/decoder:
       - Input stem with residual connection
@@ -358,3 +358,7 @@ class ResAttUnetDync(nn.Module):
         # Head
         mask = self.out(d1)  # logits: [B, n_classes, D, H, W]
         return mask
+    
+    
+# -----------------------------------------------------------------------------
+
