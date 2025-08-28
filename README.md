@@ -157,7 +157,7 @@ If you use this code, please cite our paper:
 
 ## 📜 License
 
-Specify your license here (e.g., MIT, Apache 2.0).
+
 
 ---
 
